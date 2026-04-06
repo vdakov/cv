@@ -1,91 +1,91 @@
 ---
 layout: cv
-title: Isaac Newtons's CV
+title: Vasil Dakov's CV
 ---
-# Isaac Newton
-Physicist, Mathematician, Cambridge professor.
-
+# Vasil Dakov
 <div id="webaddress">
-<a href="isaac@applesdofall.org">isaac@applesdofall.org</a>
-| <a href="http://en.wikipedia.org/wiki/Isaac_Newton">My wikipedia page</a>
+<a href="mailto:v.dakov02@gmail.com">v.dakov02@gmail.com</a>
+| <a href="https://github.com/vdakov">GitHub: vdakov</a>
+| Phone: +359 886 130 355
 </div>
-
-
-## Currently
-
-Standing on the shoulders of giants
-
-### Specialized in
-
-Laws of motion, gravitation, minting coins, disliking [Robert Hooke](http://en.wikipedia.org/wiki/Robert_Hooke)
-
-
-### Research interests
-
-Cooling, power series, optics, alchemy, planetary motions, apples.
-
 
 ## Education
 
-`1654-1660`
-__The King's School, Grantham.__
+**TU Delft**
+- `Sep 2024 - Jun 2026` MSc Data Science and Artificial Intelligence
+- `Sep 2024 - Present` MSc Management of Technology
+- `Sep 2021 - Jun 2024` BSc Computer Science and Engineering
 
-`June 1661 - now`
-__Trinity College, Cambridge__
+**TU Graz**
+- `Oct 2023 - Feb 2024` Exchange Semester: Informatics
+## Experience 
+`Jun 2025 - March 2026`
+**Research Software Developer** | TU Delft, "Practical Case Studies for AI"
+- Developing materials for a repository of (to-be) open source case studies of use of AI in industry. The repository is to-be used by educators for facilitating the teaching of AI in their courses. 
+- Gave a lecture on the usage of AI for detecting contrails from remote sensing data.
+`Feb 2025 – Apr 2026`
 
-- Sizar
+**Teaching Assistant** | TU Delft
+- Managed weekly laboratory sessions, addressed student inquiries, graded coursework, prepared educational materials, and supervised student internships at industry partners (NS, ProRail).
+- `Feb 2026 – Apr 2026` *Computer Vision*, *Alternative Learning Strategies*, and *Computational Intelligence*.
+- `Sep 2025 – Nov 2025` *Advanced Data Science for Civil Engineers* and *Introduction to AI*.
+- `Feb 2025 – Apr 2025` *Algorithms for NP-Hard Problems* and *Computational Intelligence*.
 
-`1667 - death`
-__Trinity College, Cambridge__
+`Sep 2024 - Mar 2025`
+**Software Engineering Intern** | Uber, Checkout Platform team
 
-- Fellow
+- Dealt with large-scale problems concerning payment traffic at Uber. Completed a large-scale migration from one payment eligibility verification system to another in a volatile environment.
 
+`Jul 2023 - Oct 2023; Feb 2024 - Sep 2024`
+**Research Intern** | GATE Institute
+- Computer vision and deep learning
+- Researched automatic tree detection from remote sensing data in Sofia. Used a mixture of deep learning, traditional image processing, and sampling algorithms. Ensured collaboration with TU Delft on a deep learning project for change detection.
 
-
-## Awards
-
-`2012`
-President, *Royal Society*, London, UK
-
-Associate, *French Academy of Science*, Paris, France
-
-
+`Apr 2023 - Jun 2023`
+**Software Engineering Intern** | ExaSail
+- Lead a team of five software developers working full-time with ExaSail to create an application assisting sailing team management through data analysis.
+- Created a web application that takes sailboat racing data, processes it, and generates custom visual reports for coach analysis.
 
 ## Publications
 
-<!-- A list is also available [online](http://scholar.google.co.uk/citations?user=LTOTl0YAAAAJ) -->
+`May 2024`
+**Urban Tree Detection from Remote Sensing Data Based on DeepForest Model.** [Link](https://isprs-annals.copernicus.org/articles/X-4-W4-2024/35/2024/)
+- Submitted and accepted as part of the 8th International Conference on Smart Data and Smart Cities (SDSC2024). Won the best paper award in the "Smart Digital Planning Tools Category".
 
-### Journals
-
-`1669`
-Newton Sir I, De analysi per æquationes numero terminorum infinitas. 
-
-`1669`
-Lectiones opticæ.
-
-etc. etc. etc.
-
-### Patents
-
-`2012`
-Infinitesimal calculus for solutions to physics problems, [SMBC](http://www.techdirt.com/articles/20121011/09312820678/if-patents-had-been-around-time-newton.shtml) patent 001
+`June 2024`
+**Like squinting your eyes: The impact of different fusion modules on change detection with deep learning.** [Link](https://repository.tudelft.nl/record/uuid:261fdb0e-a6f2-498a-bc67-9622823d6142)
+- Shared bachelor thesis between GATE, Sofia University "St. Kliment Ohridski" and TU Delft.
 
 
-## Occupation
+## Coursework Projects
 
-`1600`
-__Royal Mint__, London
+`Mar 2025 - Apr 2025`
+**Board Game Detection with Computer Vision and Deep Learning** | [Blogpost](https://hackmd.io/@937dn7BYQSSGBulQVdbfFQ/r1Np9GoaJx) [Repository](https://github.com/vdakov/cv-board-game-detection)
 
-- Warden
-- Minted coins
+- Created a pipeline where a user captures an image of an arranged "Settlers of Catan" board, outputting an automatically recognized internal game state with a GUI. Based on custom YOLO models trained with synthetic data.
 
-`1600`
-__Lucasian professor of Mathematics__, Cambridge University
+`Nov 2022 - Jan 2023`
+**License Plate Recognition**, TU Delft | [Repository](https://github.com/vdakov/license-plate-recognition-pipeline)
+
+- Implemented a localization and recognition pipeline that parses license plates from video input.
+- Applied image processing and machine learning techniques to translate video frame data to text output.
+
+`Nov 2022 - Jan 2023`
+**Microservice Application Backend**, TU Delft | [Repository](https://github.com/vdakov?tab=repositories)
+
+- Created a prototype backend application for a homeowner association management system utilizing microservices designed for robust computation and high traffic.
 
 
+## Technical Skills
 
-<!-- ### Footer
+- **Programming Languages:** Java, JavaScript, Python, Go, TypeScript, Scala, C, C++, Paret, x86-64 Assembly
+- **Specializations:** Computer Vision, Algorithms, Deep Learning, Machine Learning, Generative AI, Uncertainty Quantification, Optimisation, Statistical Analysis and Testing, Object-Oriented Design, Software Architecture, Software Quality
+- **Frameworks & Technologies:** Linux, High-Performance Computing, PyTorch, Scikit, Numpy, Pandas, Spring, React, OpenCV, Postgres, MySQL, Docker
 
-Last updated: May 2013 -->
 
+## Languages
 
+- English
+- Bulgarian
+- German
+- Romanian
