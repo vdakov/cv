@@ -1,6 +1,7 @@
 ---
 layout: cv
 title: Vasil Dakov's CV
+title: Vasil Dakov's CV
 ---
 # Vasil Dakov
 <div id="webaddress">
@@ -26,7 +27,8 @@ title: Vasil Dakov's CV
 `Feb 2025 – Apr 2026`
 
 **Teaching Assistant** | TU Delft
-- Managed weekly laboratory sessions, addressed student inquiries, graded coursework, prepared educational materials, and supervised student internships at industry partners (NS, ProRail).
+- Managed weekly laboratory sessions, addressed student inquiries, graded coursework, prepared educational materials
+- Supervised student internships at industry partners (NS, ProRail).
 - `Feb 2026 – Apr 2026` *Computer Vision*, *Alternative Learning Strategies*, and *Computational Intelligence*.
 - `Sep 2025 – Nov 2025` *Advanced Data Science for Civil Engineers* and *Introduction to AI*.
 - `Feb 2025 – Apr 2025` *Algorithms for NP-Hard Problems* and *Computational Intelligence*.
