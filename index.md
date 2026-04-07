@@ -1,6 +1,7 @@
 ---
 layout: cv
 title: Vasil Dakov's CV
+title: Vasil Dakov's CV
 ---
 # Vasil Dakov
 <div id="webaddress">
