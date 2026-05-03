@@ -8,6 +8,7 @@ title: Vasil Dakov's CV
 <a href="mailto:v.dakov02@gmail.com">v.dakov02@gmail.com</a>
 | <a href="https://github.com/vdakov">GitHub: vdakov</a>
 | <a href="https://www.linkedin.com/in/vasil-dakov-727506230/">LinkedIn</a>
+| <a href="https://scholar.google.com/citations?user=Chi1QkQAAAAJ&hl=en">Google Scholar</a>
 | Phone: +359 886 130 355
 </div>
 
@@ -23,7 +24,7 @@ title: Vasil Dakov's CV
 ## Experience 
 
 `Apr 2026 – Present` 
-**Uber** | ***Software Engineer*** | Developer Platforms
+**Uber** | ***Software Engineer*** | Developer Platform
 - Contributing to the development of [DevPod](https://www.uber.com/us/en/blog/devpod-improving-developer-productivity-at-uber/), Uber's cloud-based remote development environment, supporting engineers with fast development and agentic workflows at a massive scale.
 
 
