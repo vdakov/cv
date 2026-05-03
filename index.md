@@ -8,6 +8,7 @@ title: Vasil Dakov's CV
 <a href="mailto:v.dakov02@gmail.com">v.dakov02@gmail.com</a>
 | <a href="https://github.com/vdakov">GitHub: vdakov</a>
 | <a href="https://www.linkedin.com/in/vasil-dakov-727506230/">LinkedIn</a>
+| <a href="https://scholar.google.com/citations?user=Chi1QkQAAAAJ&hl=en">Google Scholar</a>
 | Phone: +359 886 130 355
 </div>
 
