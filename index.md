@@ -20,13 +20,19 @@ title: Vasil Dakov's CV
 **TU Graz**
 - `Oct 2023 - Feb 2024` Exchange Semester: Informatics
 ## Experience 
+
+`Apr 2026 – Present` 
+**Uber** | ***Software Engineer*** | Developer Platforms
+- Contributing to the development of [DevPod](https://www.uber.com/us/en/blog/devpod-improving-developer-productivity-at-uber/), Uber's cloud-based remote development environment, supporting engineers with fast development and agentic workflows at a massive scale.
+
+
 `Jun 2025 - March 2026`
-**Research Software Developer** | TU Delft, "Practical Case Studies for AI"
+**TU Delft** | ***Research Software Developer*** | "Practical Case Studies for AI"
 - Developing materials for a repository of (to-be) open source case studies of use of AI in industry. The repository is to-be used by educators for facilitating the teaching of AI in their courses. 
 - Gave a lecture on the usage of AI for detecting contrails from remote sensing data.
-`Feb 2025 – Apr 2026`
 
-**Teaching Assistant** | TU Delft
+`Feb 2025 – Apr 2026`
+**TU Delft** | ***Teaching Assistant***
 - Managed weekly laboratory sessions, addressed student inquiries, graded coursework, prepared educational materials
 - Supervised student internships at industry partners (NS, ProRail).
 - `Feb 2026 – Apr 2026` *Computer Vision*, *Alternative Learning Strategies*, and *Computational Intelligence*.
@@ -34,17 +40,17 @@ title: Vasil Dakov's CV
 - `Feb 2025 – Apr 2025` *Algorithms for NP-Hard Problems* and *Computational Intelligence*.
 
 `Sep 2024 - Mar 2025`
-**Software Engineering Intern** | Uber, Checkout Platform team
+**Uber** | ***Software Engineering Intern*** | Checkout Platform team
 
 - Dealt with large-scale problems concerning payment traffic at Uber. Completed a large-scale migration from one payment eligibility verification system to another in a volatile environment.
 
 `Jul 2023 - Oct 2023; Feb 2024 - Sep 2024`
-**Research Intern** | GATE Institute
+**GATE Institute** | ***Research Intern***
 - Computer vision and deep learning
 - Researched automatic tree detection from remote sensing data in Sofia. Used a mixture of deep learning, traditional image processing, and sampling algorithms. Ensured collaboration with TU Delft on a deep learning project for change detection.
 
 `Apr 2023 - Jun 2023`
-**Software Engineering Intern** | ExaSail
+**ExaSail** | ***Software Engineering Intern***
 - Lead a team of five software developers working full-time with ExaSail to create an application assisting sailing team management through data analysis.
 - Created a web application that takes sailboat racing data, processes it, and generates custom visual reports for coach analysis.
 
