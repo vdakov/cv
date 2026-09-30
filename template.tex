@@ -1,0 +1,158 @@
+%% start of file `template.tex'.
+\documentclass[10pt,a4paper,roman]{moderncv}
+
+% moderncv themes
+\moderncvstyle{banking}
+\moderncvcolor{black}
+\nopagenumbers{}
+
+% character encoding
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tgpagella}
+\usepackage{fontawesome}
+\usepackage[scale=0.95]{geometry}
+
+% personal data
+\name{Vasil}{Dakov}
+\phone[mobile]{+359 886 130 355}
+\email{v.dakov02@gmail.com}
+\extrainfo{%
+  \homepagesymbol \httplink[GitHub: vdakov]{github.com/vdakov} \quad
+  \faLinkedin\ \href{https://www.linkedin.com/in/vasil-dakov-727506230/}{LinkedIn} \quad
+  \faGraduationCap\ \href{https://scholar.google.com/citations?user=Chi1QkQAAAAJ&hl=en}{Google Scholar}%
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+\urlstyle{same}
+
+\begin{document}
+\makecvtitle
+\vspace{-1.5em}
+
+\section{Education}
+\begin{cvcolumns}
+    \cvcolumn[0.35]{~~~~~~~~~~~~~~~~Program}
+    {
+        \cvcolumncell {~{{\textcolor{black}{\textbf{Graduate Program:}}}}}
+        \cvcolumncell{\textit{Data Science and Artificial Intelligence}}
+        \cvcolumncell{\textit{Management of Technology (interrupted)}}
+        \cvcolumncell {~{{\textcolor{black}{\textbf{Exchange Semester:}}}}}
+        \cvcolumncell {\textit{Informatics}}
+        \cvcolumncell {~{{\textcolor{black}{\textbf{Undergraduate Program}:}}}}
+        \cvcolumncell{\textit{Computer Science and Engineering}}
+    }
+    \cvcolumn[0.35]{~~~~~~~~~~~~~Institution/Board}
+    {
+        \cvcolumncell{~\textbf{Delft University of Technology}}
+        \cvcolumncell{}
+        \cvcolumncell{}
+        \cvcolumncell{~\textbf{Technische Universität Graz}}
+        \cvcolumncell{} 
+        \cvcolumncell{~\textbf{Delft University of Technology}}
+        \cvcolumncell{}
+    }  
+    \cvcolumn{~~~~~~~~~~~~Year}
+    {   
+        \cvcolumncell{~~~~~~~~~~Sep 2024 - Jun 2026}
+        \cvcolumncell{}
+        \cvcolumncell{~~~~~~~~~~Sep 2024 - Jun 2026}
+        \cvcolumncell{~~~~~~~~~~Oct 2023 - Feb 2024}
+        \cvcolumncell{}
+        \cvcolumncell{~~~~~~~~~~Sep 2021 - Jun 2024}
+        \cvcolumncell{}
+    }
+\end{cvcolumns}
+
+\section{Work Experience}
+\cventry{Apr 2026 -- Present}{Software Engineer -- Developer Platform}{Uber}{}{}{%
+\cvlistitem{Contributing to the development of \href{https://www.uber.com/us/en/blog/devpod-improving-developer-productivity-at-uber/}{DevPod}, Uber's cloud-based remote development environment, supporting engineers with fast development and agentic workflows at a massive scale.}
+}
+
+\cventry{Jun 2025 -- March 2026}{Research Software Developer -- Practical Case Studies for AI}{TU Delft}{}{}{%
+\cvlistitem{Developing materials for a repository of (to-be) open source case studies of use of AI in industry. The repository is to-be used by educators for facilitating the teaching of AI in their courses.}
+\cvlistitem{Gave a lecture on the usage of AI for detecting contrails from remote sensing data.}
+}
+
+\cventry{Feb 2025 -- Apr 2026}{Teaching Assistant}{TU Delft}{}{}{%
+\cvlistitem{Managed weekly laboratory sessions, addressed student inquiries, graded coursework, prepared educational materials.}
+\cvlistitem{Supervised student internships at industry partners (NS, ProRail).}
+\cvlistitem{Courses: \href{https://studiegids.tudelft.nl/courses/study-guide/educations/34199}{Computer Vision}, \href{https://studiegids.tudelft.nl/courses/study-guide/educations/34172}{Alternative Learning Strategies}, \href{https://studiegids.tudelft.nl/courses/study-guide/educations/33532}{Computational Intelligence}, \href{https://studiegids.tudelft.nl/courses/study-guide/educations/37558}{Advanced Data Science for Civil Engineers}, \href{https://studiegids.tudelft.nl/courses/study-guide/educations/33623}{Introduction to AI}, and \href{https://studiegids.tudelft.nl/courses/study-guide/educations/33538}{Algorithms for NP-Hard Problems}.}
+}
+
+\cventry{Sep 2024 -- Mar 2025}{Software Engineering Intern -- Checkout Platform team}{Uber}{}{}{%
+\cvlistitem{Dealt with large-scale problems concerning payment traffic at Uber. Completed a large-scale migration from one payment eligibility verification system to another in a volatile environment.}
+}
+
+\cventry{Jul 2023 -- Oct 2023; Feb 2024 -- Sep 2024}{Research Intern -- Computer vision and deep learning}{GATE Institute}{}{}{%
+\cvlistitem{Researched automatic tree detection from remote sensing data in Sofia. Used a mixture of deep learning, traditional image processing, and sampling algorithms. Ensured collaboration with TU Delft on a deep learning project for change detection.}
+}
+
+\cventry{Apr 2023 -- Jun 2023}{Software Engineering Intern}{ExaSail}{}{}{%
+\cvlistitem{Lead a team of five software developers working full-time with ExaSail to create an application assisting sailing team management through data analysis.}
+\cvlistitem{Created a web application that takes sailboat racing data, processes it, and generates custom visual reports for coach analysis.}
+}
+
+\section{Technical Skills}
+\begin{cvcolumns}
+    \cvcolumn[0.33]{Languages \& Web}
+    {
+        \cvlistitem{Java \& SpringBoot}
+        \cvlistitem{Python}
+        \cvlistitem{Go}
+        \cvlistitem{WebDev: Java- \& TypeScript}
+        \cvlistitem{Scala, C, C++}
+        \cvlistitem{x86-64 Assembly}
+    }
+    \cvcolumn[0.34]{AI \& Computer Vision}
+    {
+        \cvlistitem{Computer Vision \& OpenCV}
+        \cvlistitem{Deep \& Machine Learning}
+        \cvlistitem{PyTorch}
+        \cvlistitem{Tabular Machine Learning}
+        \cvlistitem{Uncertainty Quantification}
+        \cvlistitem{Statistical Analysis \& A/B Testing}
+    }
+    \cvcolumn[0.33]{Systems \& Observability}
+    {
+        \cvlistitem{Linux, Bash, Git}
+        \cvlistitem{Docker \& Kubernetes}
+        \cvlistitem{Postgres, MySQL, SQL}
+        \cvlistitem{Code Observability \& Metrics}
+        \cvlistitem{Prometheus, Grafana, Loki}
+    }
+\end{cvcolumns}
+
+\section{Publications}
+\cventry{May 2024}{\href{https://isprs-annals.copernicus.org/articles/X-4-W4-2024/35/2024/}{Urban Tree Detection from Remote Sensing Data Based on DeepForest Model}}{SDSC2024}{}{}{%
+\cvlistitem{Submitted and accepted as part of the 8th International Conference on Smart Data and Smart Cities (SDSC2024). \textit{Won the best paper award in the "Smart Digital Planning Tools Category".}}
+}
+
+\cventry{June 2024}{\href{https://repository.tudelft.nl/record/uuid:261fdb0e-a6f2-498a-bc67-9622823d6142}{Like squinting your eyes: The impact of different fusion modules on change detection with deep learning}}{Bachelor Thesis}{}{}{%
+\cvlistitem{Shared bachelor thesis between GATE, Sofia University "St. Kliment Ohridski" and TU Delft.}
+}
+
+\cventry{June 2026}{\href{https://repository.tudelft.nl/record/uuid:1f28482d-3c38-46b8-8183-481b5844cfb1}{Prior Learning Through Transformers}}{Master Thesis}{}{}{%
+\cvlistitem{Master thesis in Data Science and Artificial Intelligence at TU Delft.}
+}
+
+\section{Coursework Projects}
+\cventry{Mar 2025 -- Apr 2025}{Board Game Detection with Computer Vision and Deep Learning}{\href{https://hackmd.io/@937dn7BYQSSGBulQVdbfFQ/r1Np9GoaJx}{Blogpost} \textbar\ \href{https://github.com/vdakov/cv-board-game-detection}{Repository}}{}{}{%
+\cvlistitem{Created a pipeline where a user captures an image of an arranged "Settlers of Catan" board, outputting an automatically recognized internal game state with a GUI. Based on custom YOLO models trained with synthetic data.}
+}
+
+\cventry{Nov 2022 -- Jan 2023}{License Plate Recognition, TU Delft}{\href{https://github.com/vdakov/license-plate-recognition-pipeline}{Repository}}{}{}{%
+\cvlistitem{Implemented a localization and recognition pipeline that parses license plates from video input.}
+\cvlistitem{Applied image processing and machine learning techniques to translate video frame data to text output.}
+}
+
+\section{Languages}
+\textit{Languages}: English, Bulgarian, German, Romanian
+
+\end{document}
+%% end of file `template.tex'.

@@ -49,18 +49,28 @@ table {
 
 /* end of reset */
 
+@page {
+	size: A4;
+	margin: 1.2cm 1.5cm;
+}
+
 body {
 	font: normal normal 400;
-	font-size: 11pt;
-	line-height: 1.35em;
+	font-size: 10pt;
+	line-height: 1.3em;
 	font-family: Verdana,sans-serif;
-	margin: 1in auto;
-	max-width: 6.5in;
+	margin: 0;
+	max-width: 100%;
 }
 
 p {
 	margin-bottom: 0.2em;
 	width: 100%;
+}
+
+p:has(+ ul) {
+	page-break-after: avoid;
+	break-after: avoid;
 }
 
 code {
@@ -72,16 +82,19 @@ code {
 
 p code, li code {
 	float: right;
+	margin-left: 1em;
 }
 
 ul { 
 	width: 100%;
-	margin-bottom: 1em;
+	margin-bottom: 0.8em;
 }
 
 li {
 	padding-left: 1.25em;
 	text-indent: -1.25em;
+	page-break-inside: avoid;
+	break-inside: avoid;
 }
 
 li:before {
@@ -104,9 +117,9 @@ h1,h2,h3,h4 {
 
 h1 {
 	text-align: left;
-	font-size: 3em;
+	font-size: 2.2em;
 	line-height: 1em;
-	margin-bottom: 0.2in;
+	margin-bottom: 0.15in;
 }
 
 h1+p { 
@@ -115,17 +128,21 @@ h1+p {
 }
 
 h2 {
-	font-size: 1.2em;
+	font-size: 1.15em;
 	color: rgb(46, 112, 255);
-	margin-top: 0.3in;
+	margin-top: 0.25in;
 	margin-bottom: 0.1in;
 	border-bottom: 1pt solid #ccc;
+	page-break-after: avoid;
+	break-after: avoid;
 }
 
 h3 {
-	font-size: 1.1em;
-	line-height: 1.5em; 
+	font-size: 1.05em;
+	line-height: 1.4em; 
 	margin-top: 0.15in;
+	page-break-after: avoid;
+	break-after: avoid;
 }
 
 a {
@@ -164,3 +181,42 @@ strong {
 	display: none;
 	visibility: hidden;
 }
+
+/* 3-Column Skills Grid */
+.skills-grid {
+	display: flex;
+	justify-content: space-between;
+	gap: 16pt;
+	margin-top: 5pt;
+	margin-bottom: 8pt;
+	width: 100%;
+}
+
+.skills-col {
+	flex: 1;
+	min-width: 0;
+}
+
+.skills-title {
+	font-weight: bold;
+	font-size: 9.5pt;
+	color: #000000;
+	margin-bottom: 3pt;
+	padding-bottom: 1.5pt;
+	border-bottom: 0.8pt solid #444444;
+}
+
+.skills-col ul {
+	margin-top: 3pt;
+	margin-bottom: 0;
+	padding-left: 1.1em;
+	list-style-type: disc;
+}
+
+.skills-col li {
+	font-size: 8.5pt;
+	line-height: 1.35;
+	margin-bottom: 2pt;
+	white-space: normal;
+}
+
