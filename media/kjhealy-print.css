@@ -51,7 +51,12 @@ table {
 
 @page {
 	size: A4;
-	margin: 1.2cm 1.5cm;
+	margin: 1.4cm 1.6cm;
+}
+
+#scientific-work {
+	page-break-before: always;
+	break-before: page;
 }
 
 body {

@@ -74,7 +74,7 @@ title: Vasil Dakov's CV
 <div class="skills-title">Systems &amp; Observability</div>
 <ul>
 <li>Linux, Bash, Git</li>
-<li>Docker &amp; Kubernetes</li>
+<li>Docker &amp; Kubernetes, Bazel, Terraform</li>
 <li>Postgres, MySQL, SQL</li>
 <li>Prometheus, Grafana, Loki</li>
 </ul>
@@ -97,7 +97,7 @@ title: Vasil Dakov's CV
 - Master thesis in Data Science and Artificial Intelligence at TU Delft. Proposed a novel deep learning architecture for scalable, data-driven prior hyperparamter tuning for Bayesian machine learning, also known as *prior learning*.
 
 
-## Coursework Projects
+##  Projects
 
 `Mar 2025 - Apr 2025`
 **Board Game Detection with Computer Vision and Deep Learning** | [Blogpost](https://hackmd.io/@937dn7BYQSSGBulQVdbfFQ/r1Np9GoaJx) [Repository](https://github.com/vdakov/cv-board-game-detection)

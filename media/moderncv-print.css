@@ -2,7 +2,7 @@
 
 @page {
 	size: A4;
-	margin: 0.9cm 1.2cm;
+	margin: 1.4cm 1.6cm;
 }
 
 * {
@@ -207,4 +207,9 @@ a::after {
 	line-height: 1.35;
 	margin-bottom: 2pt;
 	white-space: normal;
+}
+
+#scientific-work {
+	page-break-before: always;
+	break-before: page;
 }
