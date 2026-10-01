@@ -1,9 +1,16 @@
-## CV 
-My personal curriculum vitae in Markdown, HTML and CSS.
+## Vasil Dakov — Personal Website &amp; CV
+
+Personal website and curriculum vitae built with Markdown, ModernCV styling, Jekyll, and HTML/CSS.
+
+### Site Structure
+- **CV**: Main curriculum vitae (`index.md`, served at `/` and `/cv/`)
+- **News**: Career milestones, awards, and professional timeline (`news.md`, served at `/news/`)
+- **Blog**: Technical articles and research write-ups (`blog.md`, served at `/blog/`)
+- **Photos**: Photography showcase across travel and street perspectives (`photos.md`, served at `/photos/`)
 
 ### Export to PDF
 
-To generate the PDF version:
+To generate the clean, 2-page ModernCV PDF:
 ```bash
 ./generate_pdf.sh
 ```
@@ -11,6 +18,7 @@ or specify a custom output filename:
 ```bash
 ./generate_pdf.sh Vasil_Dakov_CV.pdf
 ```
+This converts the Markdown content and prints using Chrome headless into an exact two-page PDF.
 
 ### Run Locally
 
@@ -18,7 +26,7 @@ or specify a custom output filename:
 ```bash
 ./serve.sh
 ```
-Opens `http://localhost:8000` with live re-rendering on page refresh.
+Opens `http://localhost:8000` with live re-rendering on page refresh across all pages (`/`, `/news/`, `/blog/`, `/photos/`).
 
 **Option 2: Jekyll (Standard GitHub Pages)**
 ```bash
@@ -26,11 +34,6 @@ bundle install
 bundle exec jekyll serve
 ```
 Opens `http://localhost:4000`.
-
-
-Original credit to
-
-![Eliseo Papa](https://s.gravatar.com/avatar/eae1f0c01afda2bed9ce9cb88f6873f6?s=100)
 
 ### License
 

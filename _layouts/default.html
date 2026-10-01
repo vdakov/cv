@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title | default: "Vasil Dakov" }}</title>
+  <link rel="icon" type="image/png" href="{{ '/portrait.png' | relative_url }}">
+  <link href="{{ '/media/' | append: site.style | append: '-screen.css' | relative_url }}" type="text/css" rel="stylesheet" media="screen">
+  <link href="{{ '/media/' | append: site.style | append: '-print.css' | relative_url }}" type="text/css" rel="stylesheet" media="print">
+</head>
+<body>
+  <header class="site-header no-print">
+    <div class="site-nav-container">
+      <a class="site-brand" href="{{ '/' | relative_url }}">vdakov.github.io</a>
+      <nav class="site-nav">
+        <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' or page.url == '/index.html' or page.url == '/cv/' %}active{% endif %}">CV</a>
+        <a href="{{ '/news/' | relative_url }}" class="nav-link {% if page.url contains '/news' %}active{% endif %}">News</a>
+        <a href="{{ '/blog/' | relative_url }}" class="nav-link {% if page.url contains '/blog' %}active{% endif %}">Blog</a>
+        <a href="{{ '/photos/' | relative_url }}" class="nav-link {% if page.url contains '/photos' %}active{% endif %}">Photos</a>
+        <a href="{{ '/cv.pdf' | relative_url }}" class="nav-link nav-pdf-btn" download>PDF &darr;</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div id="content">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="site-footer no-print">
+    <div class="footer-container">
+      <span>&copy; {{ 'now' | date: "%Y" }} Vasil Dakov</span>
+      <span>
+        <a href="mailto:v.dakov02@gmail.com">Email</a> &bull;
+        <a href="https://github.com/vdakov" target="_blank" rel="noopener">GitHub</a> &bull;
+        <a href="https://www.linkedin.com/in/vasil-dakov-727506230/" target="_blank" rel="noopener">LinkedIn</a> &bull;
+        <a href="https://scholar.google.com/citations?user=Chi1QkQAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

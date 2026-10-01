@@ -28,6 +28,10 @@ body {
 	max-width: 100%;
 }
 
+.site-header, .site-footer, .no-print {
+	display: none !important;
+}
+
 /* Header: Name on left, Contact info on right to preserve space */
 #cv-header {
 	display: flex;
