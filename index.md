@@ -55,7 +55,8 @@ title: Vasil Dakov's CV
 `Apr 2023 - Jun 2023`
 **ExaSail** | ***Software Engineering Intern***
 
-- Led a team of five software developers working full-time with ExaSail to create an application assisting sailing team management through data analysis. Created a web application that takes sailboat racing data, processes it, and generates custom visual reports for coach analysis.
+- Led a team of five software developers working full-time with ExaSail to create an application assisting sailing team management through data analysis.
+- Created a web application that takes sailboat racing data, processes it, and generates custom visual reports for coach analysis.
 
 ## Technical Skills
 
