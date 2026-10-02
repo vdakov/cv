@@ -31,7 +31,7 @@ title: Vasil Dakov's CV
 
 - Part of the [DevPod](https://www.uber.com/us/en/blog/devpod-improving-developer-productivity-at-uber/) team, responsible for Uber's cloud-based remote development environment, supporting engineers with a reliable development and agentic workflow environment. Operating a massive Kubernetes cluster with tens of thousands of live containers.
 
-`Jun 2025 - March 2026`
+`Jun 2025 - Mar 2026`
 **TU Delft** | ***Research Software Developer*** | "Practical Case Studies for AI"
 
 - Developing materials for a repository of (to-be) open source case studies of use of AI in industry. The repository is to-be used by educators for facilitating the teaching of AI in their courses. Gave a lecture on the usage of AI for detecting contrails from remote sensing data.
@@ -55,7 +55,7 @@ title: Vasil Dakov's CV
 `Apr 2023 - Jun 2023`
 **ExaSail** | ***Software Engineering Intern***
 
-- Led a team of five software developers working full-time with ExaSail to create an application assisting sailing team management through data analysis Created a web application that takes sailboat racing data, processes it, and generates custom visual reports for coach analysis.
+- Led a team of five software developers working full-time with ExaSail to create an application assisting sailing team management through data analysis. Created a web application that takes sailboat racing data, processes it, and generates custom visual reports for coach analysis.
 
 ## Technical Skills
 
@@ -66,7 +66,7 @@ title: Vasil Dakov's CV
 <li>Java &amp; SpringBoot</li>
 <li>Python</li>
 <li>WebDev: Java- &amp; TypeScript</li>
-<li>Go, C, C++ x86-64 Assembly</li>
+<li>Go, C, C++, x86-64 Assembly</li>
 </ul>
 </div>
 <div class="skills-col">
@@ -104,7 +104,7 @@ title: Vasil Dakov's CV
 `June 2026`
 **Prior Learning Through Transformers.** [Link](https://repository.tudelft.nl/record/uuid:1f28482d-3c38-46b8-8183-481b5844cfb1)
 
-- Master thesis in Data Science and Artificial Intelligence at TU Delft. Proposed a novel deep learning architecture for scalable, data-driven prior hyperparamter tuning for Bayesian machine learning, also known as *prior learning*.
+- Master thesis in Data Science and Artificial Intelligence at TU Delft. Proposed a novel deep learning architecture for scalable, data-driven prior hyperparameter tuning for Bayesian machine learning, also known as *prior learning*.
 
 ## Projects
 
@@ -121,4 +121,4 @@ title: Vasil Dakov's CV
 
 ## Languages
 
-- English (fluent), Bulgarian (native), German(advanced), Romanian (intermediate)
+- English (fluent), Bulgarian (native), German (advanced), Romanian (intermediate)
