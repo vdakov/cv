@@ -412,59 +412,253 @@ a::after {
 
 .photo-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	gap: 1.5em;
-	margin-top: 1.5em;
+	margin-top: 1.8em;
 }
 
 .photo-card {
 	border: 1px solid #eaeaea;
-	border-radius: 6px;
+	border-radius: 8px;
 	overflow: hidden;
 	background: #ffffff;
-	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease;
 }
 
 .photo-card:hover {
-	transform: translateY(-2px);
-	box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+	transform: translateY(-3px);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+	border-color: #d0d7de;
 }
 
-.photo-placeholder {
-	height: 170px;
-	background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+.photo-img-wrapper {
+	position: relative;
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+	background: #f1f3f5;
+}
+
+.photo-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.35s ease;
+}
+
+.photo-card:hover .photo-img {
+	transform: scale(1.03);
+}
+
+.photo-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.18);
+	opacity: 0;
 	display: flex;
-	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	color: #6c757d;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-	font-size: 0.85em;
-	text-align: center;
-	padding: 1em;
+	transition: opacity 0.2s ease;
 }
 
-.photo-placeholder-icon {
-	font-size: 2em;
-	margin-bottom: 0.3em;
-	opacity: 0.6;
+.photo-card:hover .photo-overlay {
+	opacity: 1;
+}
+
+.photo-zoom-icon {
+	color: #ffffff;
+	font-size: 1.4em;
+	background: rgba(0, 0, 0, 0.45);
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	backdrop-filter: blur(4px);
 }
 
 .photo-info {
-	padding: 0.9em 1em;
+	padding: 0.9em 1.05em 1.1em 1.05em;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
 }
 
 .photo-title {
-	font-weight: bold;
-	font-size: 0.95em;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	font-weight: 600;
+	font-size: 0.96em;
 	color: #111111;
-	margin-bottom: 0.2em;
+	line-height: 1.35;
+	margin-bottom: 0.3em;
 }
 
-.photo-location {
-	font-size: 0.82em;
-	color: #777777;
+.photo-caption {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	font-size: 0.86em;
+	line-height: 1.45;
+	color: #495057;
+	margin-bottom: 0.6em;
+	flex-grow: 1;
+}
+
+.photo-meta {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 10px;
+	font-size: 0.78em;
+	color: #6c757d;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	margin-top: auto;
+}
+
+.photo-meta-icon {
+	display: inline-block;
+	vertical-align: -1px;
+	margin-right: 2px;
+	stroke: currentColor;
+}
+
+.photo-location, .photo-date {
+	display: inline-flex;
+	align-items: center;
+}
+
+/* Lightbox Modal */
+.photo-lightbox {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 2000;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 0.25s ease;
+}
+
+.photo-lightbox.active {
+	display: flex;
+	opacity: 1;
+}
+
+.lightbox-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(10, 10, 10, 0.82);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+}
+
+.lightbox-dialog {
+	position: relative;
+	z-index: 2001;
+	max-width: 90vw;
+	max-height: 92vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+	border-radius: 8px;
+	overflow: hidden;
+	background: #18191a;
+	animation: lbScale 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes lbScale {
+	from {
+		transform: scale(0.96);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.lightbox-close {
+	position: absolute;
+	top: 10px;
+	right: 12px;
+	z-index: 2002;
+	background: rgba(0, 0, 0, 0.55);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	color: #ffffff;
+	font-size: 1.6em;
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	line-height: 1;
+	transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.lightbox-close:hover {
+	background: rgba(255, 255, 255, 0.2);
+	transform: scale(1.08);
+}
+
+.lightbox-media {
+	max-height: 72vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #0d0e0f;
+}
+
+.lightbox-media img {
+	max-width: 100%;
+	max-height: 72vh;
+	width: auto;
+	height: auto;
+	display: block;
+	object-fit: contain;
+}
+
+.lightbox-details {
+	width: 100%;
+	padding: 1em 1.4em;
+	background: #18191a;
+	color: #e4e6eb;
+	box-sizing: border-box;
+}
+
+.lightbox-title {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	font-size: 1.1em;
+	font-weight: 600;
+	color: #ffffff;
+	margin-bottom: 0.3em;
+}
+
+.lightbox-caption {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	font-size: 0.9em;
+	line-height: 1.4;
+	color: #b0b3b8;
+	margin-bottom: 0.4em;
+}
+
+.lightbox-details .photo-meta {
+	color: #8a8d91;
 }
 
 /* Site Footer */

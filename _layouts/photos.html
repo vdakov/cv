@@ -1,0 +1,157 @@
+---
+layout: default
+---
+
+<div class="photos-container">
+  <div class="page-header">
+    <h1 class="page-title">{{ page.title | default: "Photography" }}</h1>
+    {% if page.subtitle %}
+      <p class="page-subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+  </div>
+
+  {% if content and content != "" %}
+    <div class="photos-intro">
+      {{ content }}
+    </div>
+  {% endif %}
+
+  <div class="photo-grid">
+    {% for photo in site.data.photos %}
+      {% assign raw_name = photo.filename | default: photo.image | default: photo.file %}
+      {% if raw_name contains '/' %}
+        {% assign img_url = raw_name | relative_url %}
+      {% else %}
+        {% assign img_url = '/images/photos/' | append: raw_name | relative_url %}
+      {% endif %}
+      <figure class="photo-card" data-full="{{ img_url }}" data-title="{{ photo.title | escape }}" data-caption="{{ photo.caption | escape }}" data-location="{{ photo.location | escape }}" data-date="{{ photo.date | escape }}">
+        <div class="photo-img-wrapper">
+          <img src="{{ img_url }}"
+               alt="{{ photo.title | default: photo.caption | default: 'Photo' | escape }}"
+               loading="lazy"
+               class="photo-img" />
+          <div class="photo-overlay">
+            <span class="photo-zoom-icon">&#x26F6;</span>
+          </div>
+        </div>
+        <figcaption class="photo-info">
+          {% if photo.title and photo.title != "" %}
+            <div class="photo-title">{{ photo.title }}</div>
+          {% endif %}
+          {% if photo.caption and photo.caption != "" %}
+            <p class="photo-caption">{{ photo.caption }}</p>
+          {% endif %}
+          {% if photo.location or photo.date %}
+            <div class="photo-meta">
+              {% if photo.location and photo.location != "" %}
+                <span class="photo-location">
+                  <svg class="photo-meta-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  {{ photo.location }}
+                </span>
+              {% endif %}
+              {% if photo.date and photo.date != "" %}
+                <span class="photo-date">
+                  <svg class="photo-meta-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  {{ photo.date }}
+                </span>
+              {% endif %}
+            </div>
+          {% endif %}
+        </figcaption>
+      </figure>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Photo Lightbox Modal -->
+<div id="photo-lightbox" class="photo-lightbox" aria-hidden="true" role="dialog">
+  <div class="lightbox-overlay"></div>
+  <div class="lightbox-dialog">
+    <button class="lightbox-close" aria-label="Close photo preview">&times;</button>
+    <div class="lightbox-media">
+      <img id="lightbox-img" src="" alt="" />
+    </div>
+    <div class="lightbox-details">
+      <h3 id="lightbox-title" class="lightbox-title"></h3>
+      <p id="lightbox-caption" class="lightbox-caption"></p>
+      <div id="lightbox-meta" class="photo-meta"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const lightbox = document.getElementById('photo-lightbox');
+  if (!lightbox) return;
+  const overlay = lightbox.querySelector('.lightbox-overlay');
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const lbImg = document.getElementById('lightbox-img');
+  const lbTitle = document.getElementById('lightbox-title');
+  const lbCaption = document.getElementById('lightbox-caption');
+  const lbMeta = document.getElementById('lightbox-meta');
+
+  function openLightbox(card) {
+    const fullSrc = card.getAttribute('data-full');
+    const title = card.getAttribute('data-title') || '';
+    const caption = card.getAttribute('data-caption') || '';
+    const location = card.getAttribute('data-location') || '';
+    const date = card.getAttribute('data-date') || '';
+
+    lbImg.src = fullSrc;
+    lbImg.alt = title || caption || 'Photo';
+
+    if (title) {
+      lbTitle.textContent = title;
+      lbTitle.style.display = 'block';
+    } else {
+      lbTitle.style.display = 'none';
+    }
+
+    if (caption) {
+      lbCaption.textContent = caption;
+      lbCaption.style.display = 'block';
+    } else {
+      lbCaption.style.display = 'none';
+    }
+
+    lbMeta.innerHTML = '';
+    if (location) {
+      const locSpan = document.createElement('span');
+      locSpan.className = 'photo-location';
+      locSpan.innerHTML = '<svg class="photo-meta-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> ' + location;
+      lbMeta.appendChild(locSpan);
+    }
+    if (date) {
+      const dateSpan = document.createElement('span');
+      dateSpan.className = 'photo-date';
+      dateSpan.innerHTML = '<svg class="photo-meta-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> ' + date;
+      lbMeta.appendChild(dateSpan);
+    }
+
+    lightbox.classList.add('active');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+
+  document.querySelectorAll('.photo-card').forEach(function(card) {
+    card.addEventListener('click', function() {
+      openLightbox(card);
+    });
+  });
+
+  if (overlay) overlay.addEventListener('click', closeLightbox);
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+});
+</script>

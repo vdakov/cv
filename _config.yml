@@ -1,3 +1,12 @@
 title: Vasil Dakov
 markdown: kramdown
 style: moderncv
+
+exclude:
+  - photos.csv
+  - generate_pdf.py
+  - generate_pdf.sh
+  - serve.py
+  - serve.sh
+  - Gemfile
+  - Gemfile.lock

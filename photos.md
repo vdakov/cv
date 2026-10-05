@@ -1,11 +1,6 @@
 ---
-layout: default
+layout: photos
 title: Photography
+subtitle: A visual journal of travels, alpine expeditions, and moments along the way.
 permalink: /photos/
 ---
-
-# Photography
-
-<div class="blog-placeholder-notice">
-  <strong>Work in Progress:</strong> A curated gallery of photography and travel moments will be added here soon.
-</div>
