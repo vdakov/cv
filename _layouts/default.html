@@ -22,7 +22,7 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" class="{% if page.layout == 'photos' or page.url contains '/photos' %}main-photos{% endif %}">
     <div id="content">
       {{ content }}
     </div>

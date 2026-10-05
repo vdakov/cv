@@ -67,29 +67,24 @@ def render_photos_body(repo_dir, md_path):
                 p_loc = (row.get("location") or "").strip()
                 p_date = (row.get("date") or "").strip()
 
-                meta_html = ""
-                if p_loc or p_date:
-                    loc_html = f'<span class="photo-location"><svg class="photo-meta-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> {html.escape(p_loc)}</span>' if p_loc else ""
-                    date_html = f'<span class="photo-date"><svg class="photo-meta-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> {html.escape(p_date)}</span>' if p_date else ""
-                    meta_html = f'<div class="photo-meta">{loc_html}{date_html}</div>'
+                meta_parts = []
+                if p_loc:
+                    meta_parts.append(p_loc)
+                if p_date:
+                    meta_parts.append(p_date)
+                meta_str = " • ".join(meta_parts)
 
-                title_div = f'<div class="photo-title">{html.escape(p_title)}</div>' if p_title else ""
-                caption_p = f'<p class="photo-caption">{html.escape(p_caption)}</p>' if p_caption else ""
+                title_div = f'<div class="photo-overlay-title">{html.escape(p_title)}</div>' if p_title else ""
+                meta_div = f'<div class="photo-overlay-meta">{html.escape(meta_str)}</div>' if meta_str else ""
 
                 cards_html.append(f"""
-      <figure class="photo-card" data-full="{html.escape(img_url)}" data-title="{html.escape(p_title)}" data-caption="{html.escape(p_caption)}" data-location="{html.escape(p_loc)}" data-date="{html.escape(p_date)}">
-        <div class="photo-img-wrapper">
-          <img src="{html.escape(img_url)}" alt="{html.escape(p_title or p_caption or 'Photo')}" loading="lazy" class="photo-img" />
-          <div class="photo-overlay">
-            <span class="photo-zoom-icon">&#x26F6;</span>
-          </div>
-        </div>
-        <figcaption class="photo-info">
+      <div class="photo-item" data-full="{html.escape(img_url)}" data-title="{html.escape(p_title)}" data-caption="{html.escape(p_caption)}" data-location="{html.escape(p_loc)}" data-date="{html.escape(p_date)}">
+        <img src="{html.escape(img_url)}" alt="{html.escape(p_title or p_caption or 'Photo')}" loading="lazy" />
+        <div class="photo-overlay">
           {title_div}
-          {caption_p}
-          {meta_html}
-        </figcaption>
-      </figure>""")
+          {meta_div}
+        </div>
+      </div>""")
 
     grid_content = "\n".join(cards_html)
     subtitle_p = f'<p class="page-subtitle">{html.escape(subtitle)}</p>' if subtitle else ""
@@ -109,18 +104,20 @@ def render_photos_body(repo_dir, md_path):
     return gallery_html + LIGHTBOX_MODAL_HTML
 
 LIGHTBOX_MODAL_HTML = """
-<!-- Photo Lightbox Modal -->
+<!-- Lightbox Modal -->
 <div id="photo-lightbox" class="photo-lightbox" aria-hidden="true" role="dialog">
   <div class="lightbox-overlay"></div>
+  <button class="lightbox-btn lightbox-prev" aria-label="Previous photo">&#10094;</button>
+  <button class="lightbox-btn lightbox-next" aria-label="Next photo">&#10095;</button>
+  <button class="lightbox-btn lightbox-close" aria-label="Close preview">&times;</button>
   <div class="lightbox-dialog">
-    <button class="lightbox-close" aria-label="Close photo preview">&times;</button>
     <div class="lightbox-media">
       <img id="lightbox-img" src="" alt="" />
     </div>
     <div class="lightbox-details">
       <h3 id="lightbox-title" class="lightbox-title"></h3>
       <p id="lightbox-caption" class="lightbox-caption"></p>
-      <div id="lightbox-meta" class="photo-meta"></div>
+      <div id="lightbox-meta" class="lightbox-meta"></div>
     </div>
   </div>
 </div>
@@ -129,51 +126,47 @@ LIGHTBOX_MODAL_HTML = """
 document.addEventListener('DOMContentLoaded', function() {
   const lightbox = document.getElementById('photo-lightbox');
   if (!lightbox) return;
+
   const overlay = lightbox.querySelector('.lightbox-overlay');
   const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
   const lbImg = document.getElementById('lightbox-img');
   const lbTitle = document.getElementById('lightbox-title');
   const lbCaption = document.getElementById('lightbox-caption');
   const lbMeta = document.getElementById('lightbox-meta');
 
-  function openLightbox(card) {
-    const fullSrc = card.getAttribute('data-full');
-    const title = card.getAttribute('data-title') || '';
-    const caption = card.getAttribute('data-caption') || '';
-    const location = card.getAttribute('data-location') || '';
-    const date = card.getAttribute('data-date') || '';
+  const items = Array.from(document.querySelectorAll('.photo-item'));
+  let currentIndex = -1;
+
+  function showIndex(idx) {
+    if (idx < 0) idx = items.length - 1;
+    if (idx >= items.length) idx = 0;
+    currentIndex = idx;
+
+    const el = items[idx];
+    const fullSrc = el.getAttribute('data-full');
+    const title = el.getAttribute('data-title') || '';
+    const caption = el.getAttribute('data-caption') || '';
+    const location = el.getAttribute('data-location') || '';
+    const date = el.getAttribute('data-date') || '';
 
     lbImg.src = fullSrc;
     lbImg.alt = title || caption || 'Photo';
+    lbTitle.textContent = title;
+    lbTitle.style.display = title ? 'block' : 'none';
+    lbCaption.textContent = caption;
+    lbCaption.style.display = caption ? 'block' : 'none';
 
-    if (title) {
-      lbTitle.textContent = title;
-      lbTitle.style.display = 'block';
-    } else {
-      lbTitle.style.display = 'none';
-    }
+    let metaParts = [];
+    if (location) metaParts.push(location);
+    if (date) metaParts.push(date);
+    lbMeta.textContent = metaParts.join(' • ');
+    lbMeta.style.display = metaParts.length ? 'block' : 'none';
+  }
 
-    if (caption) {
-      lbCaption.textContent = caption;
-      lbCaption.style.display = 'block';
-    } else {
-      lbCaption.style.display = 'none';
-    }
-
-    lbMeta.innerHTML = '';
-    if (location) {
-      const locSpan = document.createElement('span');
-      locSpan.className = 'photo-location';
-      locSpan.innerHTML = '<svg class="photo-meta-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> ' + location;
-      lbMeta.appendChild(locSpan);
-    }
-    if (date) {
-      const dateSpan = document.createElement('span');
-      dateSpan.className = 'photo-date';
-      dateSpan.innerHTML = '<svg class="photo-meta-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> ' + date;
-      lbMeta.appendChild(dateSpan);
-    }
-
+  function openLightbox(idx) {
+    showIndex(idx);
     lightbox.classList.add('active');
     lightbox.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -186,18 +179,20 @@ document.addEventListener('DOMContentLoaded', function() {
     lbImg.src = '';
   }
 
-  document.querySelectorAll('.photo-card').forEach(function(card) {
-    card.addEventListener('click', function() {
-      openLightbox(card);
-    });
+  items.forEach((item, i) => {
+    item.addEventListener('click', () => openLightbox(i));
   });
 
   if (overlay) overlay.addEventListener('click', closeLightbox);
   if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-      closeLightbox();
-    }
+  if (prevBtn) prevBtn.addEventListener('click', () => showIndex(currentIndex - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => showIndex(currentIndex + 1));
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    else if (e.key === 'ArrowLeft') showIndex(currentIndex - 1);
+    else if (e.key === 'ArrowRight') showIndex(currentIndex + 1);
   });
 });
 </script>
@@ -232,6 +227,7 @@ def render_page(repo_dir, md_file, active_page):
         nav_links_html.append(f'<a href="{path}" class="nav-link{active_cls}">{label}</a>')
     nav_links_html.append('<a href="/cv.pdf" class="nav-link nav-pdf-btn" download>PDF &darr;</a>')
     nav_links_str = "\n        ".join(nav_links_html)
+    main_cls = ' class="main-photos"' if active_page == "photos" else ""
 
     return f"""<!doctype html>
 <html lang="en">
@@ -253,7 +249,7 @@ def render_page(repo_dir, md_file, active_page):
     </div>
   </header>
 
-  <main id="main">
+  <main id="main"{main_cls}>
     <div id="content">
       {body_html}
     </div>
