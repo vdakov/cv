@@ -28,15 +28,18 @@ layout: default
         <img src="{{ img_url }}"
              alt="{{ photo.title | default: photo.caption | default: 'Photo' | escape }}"
              loading="lazy" />
-        <div class="photo-overlay">
+        <div class="photo-caption-overlay">
           {% if photo.title and photo.title != "" %}
-            <div class="photo-overlay-title">{{ photo.title }}</div>
+            <div class="overlay-title">{{ photo.title }}</div>
+          {% endif %}
+          {% if photo.caption and photo.caption != "" %}
+            <div class="overlay-caption">{{ photo.caption }}</div>
           {% endif %}
           {% if photo.location or photo.date %}
-            <div class="photo-overlay-meta">
-              {% if photo.location and photo.location != "" %}{{ photo.location }}{% endif %}
-              {% if photo.location and photo.date %} &bull; {% endif %}
-              {% if photo.date and photo.date != "" %}{{ photo.date }}{% endif %}
+            <div class="overlay-meta">
+              {% if photo.location and photo.location != "" %}<span>{{ photo.location }}</span>{% endif %}
+              {% if photo.location and photo.date %}<span>&bull;</span>{% endif %}
+              {% if photo.date and photo.date != "" %}<span>{{ photo.date }}</span>{% endif %}
             </div>
           {% endif %}
         </div>

@@ -74,14 +74,16 @@ def render_photos_body(repo_dir, md_path):
                     meta_parts.append(p_date)
                 meta_str = " • ".join(meta_parts)
 
-                title_div = f'<div class="photo-overlay-title">{html.escape(p_title)}</div>' if p_title else ""
-                meta_div = f'<div class="photo-overlay-meta">{html.escape(meta_str)}</div>' if meta_str else ""
+                title_div = f'<div class="overlay-title">{html.escape(p_title)}</div>' if p_title else ""
+                caption_div = f'<div class="overlay-caption">{html.escape(p_caption)}</div>' if p_caption else ""
+                meta_div = f'<div class="overlay-meta"><span>{html.escape(meta_str)}</span></div>' if meta_str else ""
 
                 cards_html.append(f"""
-      <div class="photo-item" data-full="{html.escape(img_url)}" data-title="{html.escape(p_title)}" data-caption="{html.escape(p_caption)}" data-location="{html.escape(p_loc)}" data-date="{html.escape(p_date)}">
+      <div class="photo-item" tabindex="0" data-full="{html.escape(img_url)}" data-title="{html.escape(p_title)}" data-caption="{html.escape(p_caption)}" data-location="{html.escape(p_loc)}" data-date="{html.escape(p_date)}">
         <img src="{html.escape(img_url)}" alt="{html.escape(p_title or p_caption or 'Photo')}" loading="lazy" />
-        <div class="photo-overlay">
+        <div class="photo-caption-overlay">
           {title_div}
+          {caption_div}
           {meta_div}
         </div>
       </div>""")

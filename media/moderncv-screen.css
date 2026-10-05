@@ -415,79 +415,110 @@ a::after {
 }
 
 .photo-grid {
-	column-count: 3;
-	column-gap: 4px;
-	margin-top: 1.5em;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+	gap: 14px;
+	margin-top: 1.8em;
+	width: 100%;
 }
 
 .photo-item {
-	break-inside: avoid;
-	margin-bottom: 4px;
 	position: relative;
 	overflow: hidden;
-	border-radius: 3px;
+	border-radius: 6px;
+	aspect-ratio: 4 / 3;
 	cursor: pointer;
-	background: #111111;
+	background: #18191a;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+	transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.photo-item:hover {
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
 }
 
 .photo-item img {
 	width: 100%;
-	height: auto;
+	height: 100%;
+	object-fit: cover;
 	display: block;
-	transition: transform 0.25s ease, filter 0.2s ease;
+	transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1);
 }
 
 .photo-item:hover img {
-	transform: scale(1.02);
-	filter: brightness(0.92);
+	transform: scale(1.04);
 }
 
-.photo-overlay {
+.photo-caption-overlay {
 	position: absolute;
+	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	padding: 2.5em 0.8em 0.6em 0.8em;
-	background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0) 100%);
+	padding: 1.25em;
+	background: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 0.82) 0%,
+		rgba(0, 0, 0, 0.45) 50%,
+		rgba(0, 0, 0, 0.15) 100%
+	);
 	color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
 	opacity: 0;
-	transition: opacity 0.2s ease;
+	transition: opacity 0.25s ease;
 	pointer-events: none;
 }
 
-.photo-item:hover .photo-overlay {
+.photo-item:hover .photo-caption-overlay,
+.photo-item:focus .photo-caption-overlay {
 	opacity: 1;
 }
 
-.photo-overlay-title {
+.overlay-title {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-	font-size: 0.9em;
+	font-size: 1.02em;
 	font-weight: 600;
 	line-height: 1.25;
-	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	margin-bottom: 0.3em;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
 }
 
-.photo-overlay-meta {
+.overlay-caption {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-	font-size: 0.75em;
-	opacity: 0.85;
-	margin-top: 2px;
-	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	font-size: 0.85em;
+	line-height: 1.4;
+	color: #e4e6eb;
+	margin-bottom: 0.4em;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
 }
 
-@media (max-width: 850px) {
+.overlay-meta {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	font-size: 0.78em;
+	color: #b0b3b8;
+	display: flex;
+	gap: 6px;
+	align-items: center;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) {
 	.photo-grid {
-		column-count: 2;
-		column-gap: 3px;
-	}
-	.photo-item {
-		margin-bottom: 3px;
+		grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+		gap: 10px;
 	}
 }
 
 @media (max-width: 480px) {
 	.photo-grid {
-		column-count: 1;
+		grid-template-columns: 1fr;
+		gap: 10px;
+	}
+	.photo-caption-overlay {
+		opacity: 1;
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, transparent 60%);
 	}
 }
 
