@@ -29,7 +29,7 @@ title: Vasil Dakov's CV
 `Apr 2026 – Present`
 **Uber** | ***Software Engineer*** | Developer Platform
 
-- Part of the [DevPod](https://www.uber.com/us/en/blog/devpod-improving-developer-productivity-at-uber/) team, responsible for Uber's cloud-based remote development environment, supporting engineers with a reliable development and agentic workflow environment. Operating a massive Kubernetes cluster with tens of thousands of live containers.
+- Part of the [Devpod](https://www.uber.com/us/en/blog/devpod-improving-developer-productivity-at-uber/) team, responsible for Uber's cloud-based remote development environment, supporting engineers with a reliable development and agentic workflow environment. Operating a massive Kubernetes cluster with tens of thousands of live containers.
 
 `Jun 2025 - Mar 2026`
 **TU Delft** | ***Research Software Developer*** | "Practical Case Studies for AI"
@@ -74,7 +74,7 @@ title: Vasil Dakov's CV
 <div class="skills-title">AI &amp; Computer Vision</div>
 <ul>
 <li>Deep &amp; Machine Learning, PyTorch</li>
-<li>Bayesian Machine Learning</li>
+<li>Bayesian Machine Learning, AutoML</li>
 <li>Computer Vision &amp; OpenCV</li>
 <li>Statistical Analysis &amp; A/B Testing</li>
 </ul>
@@ -95,7 +95,7 @@ title: Vasil Dakov's CV
 `May 2024`
 **Urban Tree Detection from Remote Sensing Data Based on DeepForest Model.** [Link](https://isprs-annals.copernicus.org/articles/X-4-W4-2024/35/2024/)
 
-- Submitted and accepted as part of the 8th International Conference on Smart Data and Smart Cities (SDSC2024). Won the best paper award in the "Smart Digital Planning Tools Category".
+- Submitted and accepted as part of the 8th International Conference on Smart Data and Smart Cities (SDSC2024). Won the best paper award in the "Smart Digital Planning Tools" category.
 
 `June 2024`
 **Like squinting your eyes: The impact of different fusion modules on change detection with deep learning.** [Link](https://repository.tudelft.nl/record/uuid:261fdb0e-a6f2-498a-bc67-9622823d6142)
