@@ -238,7 +238,7 @@ def render_page(repo_dir, md_file, active_page):
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title} | Vasil Dakov</title>
   <link rel="icon" type="image/png" href="/portrait.png">
-  <link href="/media/moderncv-screen.css" type="text/css" rel="stylesheet" media="screen">
+  <link href="/media/moderncv-screen.css?v=2" type="text/css" rel="stylesheet" media="screen">
   <link href="/media/moderncv-print.css" type="text/css" rel="stylesheet" media="print">
 </head>
 <body>
