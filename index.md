@@ -29,7 +29,7 @@ title: Vasil Dakov's CV
 `Apr 2026 – Present`
 **Uber** | ***Software Engineer*** | Developer Platform
 
-- Part of the [Devpod](https://www.uber.com/us/en/blog/devpod-improving-developer-productivity-at-uber/) team, responsible for Uber's cloud-based remote development environment, supporting engineers with a reliable development and agentic workflow environment. Operating a massive Kubernetes cluster with tens of thousands of live containers.
+- Part of the [Devpod](https://www.uber.com/us/en/blog/devpod-improving-developer-productivity-at-uber/) team, responsible for Uber's cloud-based remote development environment, supporting engineers with a reliable development and agentic workflow environment. Operating a massive Kubernetes cluster with tens of thousands of concurrent users, across multiple regions.
 
 `Jun 2025 - Mar 2026`
 **TU Delft** | ***Research Software Developer*** | "Practical Case Studies for AI"
