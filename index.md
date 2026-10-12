@@ -32,7 +32,7 @@ title: Vasil Dakov's CV
 - Part of the [Devpod](https://www.uber.com/us/en/blog/devpod-improving-developer-productivity-at-uber/) team, responsible for Uber's cloud-based remote development environment, supporting engineers with a reliable development and agentic workflow environment. Operating a massive Kubernetes cluster with tens of thousands of concurrent users across multiple regions.
 
 `Jun 2025 - Mar 2026`
-**TU Delft** | ***Research Software Developer*** | "Practical Case Studies for AI"
+**TU Delft** | ***Research Software Developer*** | ["Practical Case Studies for AI"](https://www.tudelft.nl/en/2025/delft-ai/four-new-grants-awarded-for-development-of-ai-augmented-engineering-education)
 
 - Developing materials for a repository of (to-be) open source case studies of use of AI in industry. The repository is to-be used by educators for facilitating the teaching of AI in their courses. Gave a lecture on the usage of AI for detecting contrails from remote sensing data.
 
