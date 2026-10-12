@@ -28,6 +28,7 @@ layout: default
         <img src="{{ img_url }}"
              alt="{{ photo.title | default: photo.caption | default: 'Photo' | escape }}"
              loading="lazy" />
+        {% if (photo.title and photo.title != "") or (photo.caption and photo.caption != "") or (photo.location and photo.location != "") or (photo.date and photo.date != "") %}
         <div class="photo-caption-overlay">
           {% if photo.title and photo.title != "" %}
             <div class="overlay-title">{{ photo.title }}</div>
@@ -43,6 +44,7 @@ layout: default
             </div>
           {% endif %}
         </div>
+        {% endif %}
       </div>
     {% endfor %}
   </div>
@@ -107,6 +109,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (date) metaParts.push(date);
     lbMeta.textContent = metaParts.join(' • ');
     lbMeta.style.display = metaParts.length ? 'block' : 'none';
+
+    const lbDetails = lightbox.querySelector('.lightbox-details');
+    if (lbDetails) {
+      lbDetails.style.display = (title || caption || metaParts.length) ? 'block' : 'none';
+    }
   }
 
   function openLightbox(idx) {

@@ -78,14 +78,16 @@ def render_photos_body(repo_dir, md_path):
                 caption_div = f'<div class="overlay-caption">{html.escape(p_caption)}</div>' if p_caption else ""
                 meta_div = f'<div class="overlay-meta"><span>{html.escape(meta_str)}</span></div>' if meta_str else ""
 
-                cards_html.append(f"""
-      <div class="photo-item" tabindex="0" data-full="{html.escape(img_url)}" data-title="{html.escape(p_title)}" data-caption="{html.escape(p_caption)}" data-location="{html.escape(p_loc)}" data-date="{html.escape(p_date)}">
-        <img src="{html.escape(img_url)}" alt="{html.escape(p_title or p_caption or 'Photo')}" loading="lazy" />
+                overlay_html = f"""
         <div class="photo-caption-overlay">
           {title_div}
           {caption_div}
           {meta_div}
-        </div>
+        </div>""" if (title_div or caption_div or meta_div) else ""
+
+                cards_html.append(f"""
+      <div class="photo-item" tabindex="0" data-full="{html.escape(img_url)}" data-title="{html.escape(p_title)}" data-caption="{html.escape(p_caption)}" data-location="{html.escape(p_loc)}" data-date="{html.escape(p_date)}">
+        <img src="{html.escape(img_url)}" alt="{html.escape(p_title or p_caption or 'Photo')}" loading="lazy" />{overlay_html}
       </div>""")
 
     grid_content = "\n".join(cards_html)
@@ -165,6 +167,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (date) metaParts.push(date);
     lbMeta.textContent = metaParts.join(' • ');
     lbMeta.style.display = metaParts.length ? 'block' : 'none';
+
+    const lbDetails = lightbox.querySelector('.lightbox-details');
+    if (lbDetails) {
+      lbDetails.style.display = (title || caption || metaParts.length) ? 'block' : 'none';
+    }
   }
 
   function openLightbox(idx) {

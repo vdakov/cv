@@ -1,6 +1,6 @@
 ---
 layout: photos
 title: Photography
-subtitle: A visual journal of travels, alpine expeditions, and moments along the way.
+subtitle: I like to take pictures sometimes. A page mostly for my own entertainment.
 permalink: /photos/
 ---
