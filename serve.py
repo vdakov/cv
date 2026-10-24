@@ -225,7 +225,6 @@ def render_page(repo_dir, md_file, active_page):
 
     nav_items = [
         ("cv", "/", "CV"),
-        ("news", "/news/", "News"),
         ("blog", "/blog/", "Blog"),
         ("photos", "/photos/", "Photos"),
     ]
@@ -283,7 +282,7 @@ class CVHandler(http.server.SimpleHTTPRequestHandler):
         path = self.path.split("?")[0].rstrip("/")
         if path == "":
             path = "/"
-        routes = {"/": ("index.md", "cv"), "/index.html": ("index.md", "cv"), "/cv": ("index.md", "cv"), "/news": ("news.md", "news"), "/blog": ("blog.md", "blog"), "/photos": ("photos.md", "photos")}
+        routes = {"/": ("index.md", "cv"), "/index.html": ("index.md", "cv"), "/cv": ("index.md", "cv"), "/blog": ("blog.md", "blog"), "/photos": ("photos.md", "photos")}
         if path in routes:
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")
@@ -301,7 +300,6 @@ class CVHandler(http.server.SimpleHTTPRequestHandler):
             "/": ("index.md", "cv"),
             "/index.html": ("index.md", "cv"),
             "/cv": ("index.md", "cv"),
-            "/news": ("news.md", "news"),
             "/blog": ("blog.md", "blog"),
             "/photos": ("photos.md", "photos"),
         }

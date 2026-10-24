@@ -14,7 +14,6 @@
       <a class="site-brand" href="{{ '/' | relative_url }}">vdakov.github.io</a>
       <nav class="site-nav">
         <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' or page.url == '/index.html' or page.url == '/cv/' %}active{% endif %}">CV</a>
-        <a href="{{ '/news/' | relative_url }}" class="nav-link {% if page.url contains '/news' %}active{% endif %}">News</a>
         <a href="{{ '/blog/' | relative_url }}" class="nav-link {% if page.url contains '/blog' %}active{% endif %}">Blog</a>
         <a href="{{ '/photos/' | relative_url }}" class="nav-link {% if page.url contains '/photos' %}active{% endif %}">Photos</a>
         <a href="{{ '/cv.pdf' | relative_url }}" class="nav-link nav-pdf-btn" download>PDF &darr;</a>

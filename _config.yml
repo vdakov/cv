@@ -3,6 +3,7 @@ markdown: kramdown
 style: moderncv
 
 exclude:
+  - news.md
   - photos.csv
   - generate_pdf.py
   - generate_pdf.sh

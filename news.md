@@ -2,6 +2,7 @@
 layout: default
 title: News
 permalink: /news/
+published: false
 ---
 
 <div class="news-container">
