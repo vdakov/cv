@@ -107,6 +107,12 @@ title: Vasil Dakov's CV
 
 - Master thesis in Data Science and Artificial Intelligence at TU Delft. Proposed a novel deep learning architecture for scalable, data-driven prior hyperparameter tuning for Bayesian machine learning, also known as *prior learning*.
 
+`Oct 2026`
+**CoClusterPFN: Amortized Posterior Similarity for Tabular Bayesian Clustering.** [Link](https://openreview.net/forum?id=W2NxJnnjAm)
+
+- Submitted to ICLR 2027 (under double-blind review). Second author (co-authors left anonymous per conference policy).
+- Introduced CoClusterPFN, a Prior-data Fitted Network (PFN) for tabular Bayesian clustering that predicts pairwise posterior co-clustering probabilities in a single forward pass, matching MCMC accuracy orders of magnitude faster.
+
 ## Projects
 
 `Mar 2025 - Apr 2025`

@@ -82,6 +82,17 @@ permalink: /news/
         </p>
       </div>
 
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-header">
+          <span class="timeline-date">October 2026</span>
+          <h3 class="timeline-title">CoClusterPFN Paper Submitted to ICLR 2027</h3>
+        </div>
+        <p class="timeline-desc">
+          Second author on <a href="https://openreview.net/forum?id=W2NxJnnjAm" target="_blank" rel="noopener">CoClusterPFN: Amortized Posterior Similarity for Tabular Bayesian Clustering</a>, introducing a Prior-data Fitted Network for fast tabular Bayesian clustering (submitted to ICLR 2027 under double-blind review; other authors anonymous).
+        </p>
+      </div>
+
     </div>
   </div>
 
